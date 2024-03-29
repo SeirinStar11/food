@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <!-- 3、引入css样式表 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .box {
+            display: inline-block;
+            width: 300px;
+            height: 350px;
+            margin-left: 23px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .box img {
+            width: 100%;
+            height: 65%;
+        }
+        .box span {
+            color: red;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+        .pre {
+            overflow: hidden;
+            width: 100%;
+            padding:0px 10px;
+            font-size: 13px;
+            color: #666;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            text-overflow: ellipsis;
+        }
+        .month {
+            margin-left: 75%;
+            color: #666;
+        }
+        .box:hover {
+            border: 2px solid red;
+        }
+        img:hover {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1、大图 -->
+    <div class="big"></div>
+    <!-- 2、导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="食品页面.html">食品页面</a></li>
+            <li><a href="购物车.html">购物车</a></li>
+            <li><a href="收货信息.html">收货信息</a></li>
+        </ul>
+    </nav>
+    <!-- 3.食品信息 -->
+    <div style="margin-top: 30px;">
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/汤圆.jpg" alt="">
+            <h4>『感恩福利』6.8元购红糖醪糟小汤圆</h4>
+            <div class="pre">
+                醪糟汤圆是汉族传统名点，节日食俗，属于甜品点心菜谱之一，是中国民间一道历史悠久的小吃，广泛流行于长江流域，如四川、湖南、江浙等地。
+            </div>
+            <span>￥6.8</span>
+            <div class="month">
+                月销57
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/汉堡套餐.jpg" alt="">
+            <h4>『麦当劳』麦当劳汉堡套餐</h4>
+            <div class="pre">
+                来份巨无霸+可乐组合
+                现在起至5月21日，长按识别下方二维码
+                还可以领巨无霸满25-5优惠券
+                领券后3日内,通过麦当劳微信小程序-到店取餐使用微信支付即可使用!数量有限,先到先得!
+            </div>
+            <span>￥25</span>
+            <div class="month">
+                月销100+
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/八寸披萨.jpg" alt="">
+            <h4>『Pizza』八寸奥尔良披萨</h4>
+            <div class="pre">
+                披萨是一种由特殊的饼底、乳酪、酱汁和馅料烤制而成，具有意大利风味的食品。这种食品已经超越语言与文化的壁障，全球通行，受到各国消费者的喜爱。
+            </div>
+            <span>￥29.9</span>
+            <div class="month">
+                月销79
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/冒菜.jpg" alt="">
+            <h4>『冒菜』冒菜西施超值套餐</h4>
+            <div class="pre">
+                冒菜是成都汉族传统名小吃，与麻辣烫略微不同，“冒”字在这里是动词。准备一锅麻辣鲜香的汤汁，把菜用一个竹勺装好，一般一勺就是一份。在锅里煮熟，然后盛到碗里，顺便再舀一勺汤汁，加入老板调制的各种调料。
+            </div>
+            <span>￥19.9</span>
+            <div class="month">
+                月销200+
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/小笼包.jpg" alt="">
+            <h4>『小笼包』酱肉小笼包8个</h4>
+            <div class="pre">
+                小笼包，本称小笼馒头
+                ，是中国著名的汉族传统面点小吃
+                ，汤包源于北宋京城开封的灌汤包，早在北宋时期，已有售卖，称灌浆包或灌汤包子。据《东京梦华录》记载，东京汴梁(今开封市)70多家酒店之一的“王楼”，制售的名为“山洞梅花包子”。后又在各地得到发展和演变，形成不同的口味。
+            </div>
+            <span>￥10</span>
+            <div class="month">
+                月销57
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/瑞兴咖啡.jpg" alt="">
+            <h4>『瑞兴咖啡』瑞兴咖啡活动价</h4>
+            <div class="pre">
+                luckin coffee（瑞幸咖啡）总部位于厦门，是中国门店数最大的连锁咖啡品牌之一。瑞幸咖啡以“创造幸运时刻，激发美好生活热望”为使命，充分利用移动互联网和大数据技术的新零售模式，与各领域优质供应商深度合作，打造高品质的消费体验，为顾客创造幸运时刻。
+            </div>
+            <span>￥15.5</span>
+            <div class="month">
+                月销100+
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/西瓜.jpg" alt="">
+            <h4>『西瓜』5斤西瓜一个</h4>
+            <div class="pre">
+                西瓜（学名：Citrullus lanatus(Thunb.) Matsum. et Nakai），葫芦科西瓜属植物，有称“盛夏之王”的美誉
+            </div>
+            <span>￥8.8</span>
+            <div class="month">
+                月销49
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/烤鸭套餐.jpg" alt="">
+            <h4>『烤鸭』超值烤鸭套餐</h4>
+            <div class="pre">
+                烤鸭是北京和南京的一道特色名菜，属于北京菜或金陵菜，该菜品以色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”而驰名中外，其色泽略黄，柔软淡香，夹卷其他荤素食物食用，为宴席常用菜点，更是家常风味美食
+            </div>
+            <span>￥53.8</span>
+            <div class="month">
+                月销26
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/炸鸡.jpg" alt="">
+            <h4>『炸鸡』韩式炸鸡单人餐</h4>
+            <div class="pre">
+                炸鸡配啤酒，越吃越富有
+                好吃的东西要吃进肚子里，可爱的人要放进心里。
+            </div>
+            <span>￥19.9</span>
+            <div class="month">
+                月销52
+            </div>
+        </div>
+        <div class="box" style="border: 2px solid white;border-radius: 10px;">
+            <img src="./pic/八宝粥.jpg" alt="">
+            <h4>『八宝粥』养胃八宝粥一碗</h4>
+            <div class="pre">
+                八宝又名腊八粥，佛粥，中国传统节日食品。是一种在腊八节用由多种食材熬制的粥。中国南宋文人周密撰《武林旧事》说：“用胡桃、松子、乳覃、柿、栗之类作粥，谓之腊八粥”。八宝粥具有健脾养胃，消滞减肥，益气安神的功效。可作肥胖及神经衰弱者食疗之用，也可作为日常养生健美之食品。
+            </div>
+            <span>￥3.9</span>
+            <div class="month">
+                月销300+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <!-- 3、引入css样式表 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .form-box {
+            width: 500px;
+        }
+
+        .form-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            flex: 90px 0 0;
+        }
+
+        label::after {
+            content: "：";
+            margin-right: 6px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        input.text-input {
+            display: block;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 40px;
+            outline: none;
+            caret-color: #09f;
+            /*光标颜色*/
+            transition: all 300ms;
+            border-left-width: 5px;
+        }
+
+        input.text-input:valid {
+            border-color: #3c9;
+        }
+
+        input.text-input:invalid {
+            border-color: #f66;
+        }
+        input[type=checkbox] {
+            position: relative;
+            appearance: none;/*去除系统默认信息appearance的样式引发的问题*/
+            cursor: pointer;
+            transition: all 100ms;
+            border-radius: 31px;
+            width: 70px;
+            height: 40px;
+            background-color: #e9e9eb;
+            outline: none;
+            margin: 0;
+            display: inline-block;
+        }
+        input[type=checkbox]::before {
+            position: absolute;
+            content: "";
+            transition: all 300ms cubic-bezier(.45, 1, .4, 1);
+            border-radius: 31px;
+            width: 70px;
+            height: 40px;
+            background-color: #e9e9eb;
+        }
+        input[type=checkbox]::after {
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            border-radius: 27px;
+            width: 32px;
+            height: 32px;
+            background-color: #fff;
+            box-shadow: 1px 1px 5px rgba(#000, .3);
+            content: "";
+            transition: all 300ms cubic-bezier(.4, .4, .25, 1.35);
+        }
+        input[type=checkbox]:checked {
+            background-color: #3c9;
+        }
+        input[type=checkbox]:checked::before {
+            transform: scale(0);
+        }
+        input[type=checkbox]:checked::after {
+            transform: translateX(30px);
+        }
+        button {
+            width: 48%;
+            height: 40px;
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            background: #63c3ff;
+            color: #fff;
+        }
+        button::before {
+            --size: 0;
+            position: absolute;
+            left: var(--x);
+            top: var(--y);
+            width: var(--size);
+            height: var(--size);
+            background-image: radial-gradient(circle closest-side, #09f, transparent);
+            content: "";
+            transform: translate3d(-50%, -50%, 0);
+            transition: width 200ms ease, height 200ms ease;
+        }
+        button[type=reset] {
+            background: #6fcc6f;
+        }
+        button[type=reset]::before {
+            background-image: radial-gradient(circle closest-side, #4abf4a, transparent);
+        }
+        button:hover::before {
+            --size: 400px;
+        }
+        button:first-child {
+            margin-right: 4%;
+        }
+        span {
+            position: relative;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1、大图 -->
+    <div class="big"></div>
+    <!-- 2、导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="食品页面.html">食品页面</a></li>
+            <li><a href="购物车.html">购物车</a></li>
+            <li><a href="收货信息.html">收货信息</a></li>
+        </ul>
+    </nav>
+    <!-- 3、收货表单 -->
+    <div class="order" style="margin:30px auto;width: 500px;">
+        <form class="form-box" id="form" onsubmit=onSubmit(event)>
+            <div class="form-item">
+                <label>姓名</label>
+                <input type="text"
+                    name="name"
+                    class="text-input"
+                    placeholder="请输入收货姓名"
+                    required>
+            </div>
+            <div class="form-item">
+                <label>手机号</label>
+                <input type="text"
+                    name="name"
+                    class="text-input"
+                    placeholder="请输入手机号(11个字符,仅限数字)"
+                    pattern="^[\d]{11}$"
+                    oninput="setCustomValidity('')"
+                    oninvalid="setCustomValidity('请输入合法的手机号>_<')"
+                    required>
+            </div>
+            <div class="form-item">
+                <label>备用邮箱</label>
+                <input type="email"
+                    class="text-input"
+                    placeholder="请输入备用邮箱"
+                    required>
+            </div>
+            <div class="form-item">
+                <label>所在地区</label>
+                <input type="text"
+                    name="password"
+                    class="text-input"
+                    placeholder="请输入所在地区(省/市)"
+                    oninput="onPwdInput(event)"
+                    required>
+            </div>
+            <div class="form-item">
+                <label>详细地址</label>
+                <input type="text"
+                    name="password"
+                    class="text-input"
+                    placeholder="请输入详细地址"
+                    required>
+            </div>
+            <div class="form-item">
+                <label>默认信息</label>
+                <input name="isAdult" type="checkbox" />
+            </div>
+            <div class="form-item">
+                <button type="reset" onmousemove="move(event)">
+                    <span>重 置</span>
+                </button>
+                <button type="submit" value="提 交" onmousemove="move(event)">
+                    <span>提 交</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function move(e) {
+            const x = e.pageX - e.target.offsetLeft;
+            const y = e.pageY - e.target.offsetTop;
+            e.target.style.setProperty("--x", `${x}px`);
+            e.target.style.setProperty("--y", `${y}px`);
+        }
+        function onSubmit(e) {
+            e.preventDefault(); // 阻止表单提交
+            const form = e.target;
+            console.log(params);
+        }
+        // function onPwdInput(e) {
+        //     confirmPwd.pattern = e.target.value;
+        // }
+    </script>
+</body>
+</html>
